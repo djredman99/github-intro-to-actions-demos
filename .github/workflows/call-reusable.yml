@@ -1,0 +1,16 @@
+name: Call a Reusable Workflow
+
+on:
+  workflow_dispatch:
+  
+  
+jobs:
+
+  caller-job:
+    runs-on: ubuntu-latest
+    steps: 
+      - run: echo "Job from caller workflow"
+      
+  reusable-job:
+    uses: djredman99/github-intro-to-actions-demos/.github/workflows/reusable.yml
+    
