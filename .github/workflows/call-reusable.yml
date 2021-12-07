@@ -12,5 +12,5 @@ jobs:
       - run: echo "Job from caller workflow"
       
   reusable-job:
-    uses: djredman99/github-intro-to-actions-demos/.github/workflows/reusable.yml
+    uses: djredman99/github-intro-to-actions-demos/.github/workflows/reusable.yml@main
     
