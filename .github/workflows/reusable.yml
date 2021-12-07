@@ -7,9 +7,9 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - run echo "job1"
+      - run: echo "reusable workflow job1"
   
   job2:
     runs-on: ubuntu-latest
     steps:
-      - run echo "job2"
+      - run: echo "reusable workflow job2"
