@@ -1,7 +1,7 @@
 # This is a basic workflow that is manually triggered
 
 # Display name of workflow
-name: Workflow Inputs
+name: Demo 2 - Workflow Inputs
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI or API.
 on:
