@@ -1,7 +1,7 @@
 # I am a workflow that demonstrates multiple jobs and chaining them together
 
 # Display name of workflow
-name: Demo 03 - Jobs and Chaining
+name: Demo 3 - Jobs and Chaining
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI or API.
 on:
