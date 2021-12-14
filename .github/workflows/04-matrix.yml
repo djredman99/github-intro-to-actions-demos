@@ -1,7 +1,7 @@
 # I am a basic workflow that does a matrix build
 
 # Display name of workflow
-name: Matrix Builds
+name: Demo 4 - Matrix Builds
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI or API.
 on:
