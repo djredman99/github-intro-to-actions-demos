@@ -1,7 +1,7 @@
 - ~~Basic Hello~~
-- Multiple Jobs
-- Matrix
-- Needs
+- ~Multiple Jobs~
+- ~Matrix~
+- ~Needs~
 - Secrets
 - Environments
-- Triggers and Inputs
+- ~Triggers and Inputs~
