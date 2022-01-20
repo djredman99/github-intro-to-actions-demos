@@ -1,4 +1,4 @@
-name: CallReusable
+name: Demo 8 - CallReusable
 
 on:
   workflow_dispatch:
