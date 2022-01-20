@@ -30,6 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy to QA
     environment: QA
+    needs: deploy_dev
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -44,6 +45,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy to PROD
     environment: PROD
+    needs: deploy_qa
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
