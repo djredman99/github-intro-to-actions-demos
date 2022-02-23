@@ -7,7 +7,10 @@ on:
   # Triggers the workflow on push or pull request events but only for the main branch
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# We have multiple jobs here and the first job is set to fail
+# Multiple scenarios exist:
+# 1. How to still run Job 2 when there is no dependency between jobs
+# 2. How to still run Job 2 when there is a dependency between jobs
 jobs:
   # This workflow contains a single job called "build"
   Job1:
@@ -26,3 +29,5 @@ jobs:
     steps:
       - run: echo "still running"
         if: ${{ failure() }}
+      
+      - run: echo "NOT running?"
