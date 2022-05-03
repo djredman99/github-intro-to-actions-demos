@@ -28,9 +28,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - run: echo "still running"
-        if: ${{ failure() }}
+        #if: ${{ failure() }}
         
-      - run: exit 1
+      #- run: exit 1
       
       - run: echo "NOT running?"
-        if: ${{ success() }}
+        #if: ${{ success() }}
