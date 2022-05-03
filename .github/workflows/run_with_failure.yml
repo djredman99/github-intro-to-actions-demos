@@ -29,5 +29,8 @@ jobs:
     steps:
       - run: echo "still running"
         if: ${{ failure() }}
+        
+      - run: exit 1
       
       - run: echo "NOT running?"
+        if: ${{ success() }}
