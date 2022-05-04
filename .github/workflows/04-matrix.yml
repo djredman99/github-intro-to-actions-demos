@@ -20,7 +20,7 @@ on:
 jobs:
   # This workflow contains a single job called "greet"
   greet:
-    concurrency: matrixJob
+    # concurrency: matrixJob
     # Defines the matrix strategy to be used
     strategy:
       matrix:
