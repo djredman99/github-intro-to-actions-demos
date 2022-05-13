@@ -40,11 +40,11 @@ jobs:
         
   ####################################################    
   
-  deploy_prod:
+  prod_gate:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    name: Deploy to PROD
-    environment: PROD
+    name: PROD GATE
+    environment: Pre-Prod
     needs: deploy_qa
     
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -53,4 +53,17 @@ jobs:
       - name: Run a one-line script
         run: echo My deploy steps
 
-      
+  ####################################################    
+  
+  deploy_prod:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    name: Deploy to PROD
+    environment: PROD
+    needs: prod_gate
+    
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo My deploy steps
