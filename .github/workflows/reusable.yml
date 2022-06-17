@@ -9,6 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "reusable workflow job1"
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT" 
+        
   
   job2:
     runs-on: ubuntu-latest
