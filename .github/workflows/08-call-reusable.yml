@@ -2,6 +2,17 @@ name: Demo 8 - CallReusable
 
 on:
   workflow_dispatch:
+    inputs:
+      someInput:
+        type: text
+        required: true
+        description: Enter the PIM ID
+        default: "0"
+      someChoice:
+        type: choice
+        options:
+          - Left
+          - Right
   
   
 jobs:
@@ -9,7 +20,9 @@ jobs:
   caller-job:
     runs-on: ubuntu-latest
     steps: 
-      - run: echo "Job from caller workflow"
+      - run: |
+          echo "Job from caller workflow"
+          echo ${{ github.event.inputs.someInput }}
       
   reusable-job:
     uses: djredman99/github-intro-to-actions-demos/.github/workflows/reusable.yml@main
