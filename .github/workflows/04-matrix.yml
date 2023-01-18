@@ -38,3 +38,8 @@ jobs:
       run: |
         echo "Hello ${{ github.event.inputs.name }}"
         echo "Python ver ${{ matrix.python }}" 
+    
+    - name: Setup Python Version
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python }}
