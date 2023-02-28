@@ -25,5 +25,5 @@ jobs:
           echo ${{ github.event.inputs.someInput }}
       
   reusable-job:
-    uses: .github/workflows/reusable.yml@main
+    uses: /.github/workflows/reusable.yml@main
     
