@@ -15,7 +15,7 @@ This repository has a series of workflows designed to introduce different featur
 ## Demos
 1. Basic Workflow
 1. Workflow Inputs
-1. **Note Add:** Using Environment variables
+1. **Note Add:** Using Environment variables, Secrets, and Variable
 1. Jobs and Chaining
 1. Matrix Strategy
 1. Context Variables
