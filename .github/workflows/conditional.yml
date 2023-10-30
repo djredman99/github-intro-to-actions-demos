@@ -11,7 +11,7 @@ on:
         description: The option
         type: choice
         options:
-          - Otpion1
+          - Option1
           - Option2
   pull_request:
     branches: [ "main" ]
