@@ -9,6 +9,7 @@ on:
     inputs:
       build-option:
         description: The option
+        type: choice
         options:
           - Otpion1
           - Option2
