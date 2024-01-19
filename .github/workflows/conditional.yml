@@ -1,5 +1,3 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Conditional on inputs
 
 # Controls when the workflow will run
@@ -11,7 +9,7 @@ on:
         description: The option
         type: choice
         options:
-          - Otpion1
+          - Option1
           - Option2
   pull_request:
     branches: [ "main" ]
