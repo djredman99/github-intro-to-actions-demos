@@ -5,6 +5,10 @@ on:
 
 env:
   OPENSHIFT_NAMESPACE: ${{ format('{0}_{1}', vars.OS_NAMESPACE, vars.OS_ENVIRONMENT)}}
+  # ****** CANNOT DO *******
+  # OS_NAMESPACE: abc
+  # OS_ENVIRONMEN: 123
+  # MY_ENV: ${{ format('{0}_{1}', env.OS_NAMESPACE, env.OS_ENVIRONMENT)}}
 
 jobs:
 
@@ -13,3 +17,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo ${{ env.OPENSHIFT_NAMESPACE }}
+      - run: echo ${{ vars[OS_NAMESPACE]}}
