@@ -17,4 +17,3 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo ${{ env.OPENSHIFT_NAMESPACE }}
-      - run: echo ${{ vars[OS_NAMESPACE]}}
