@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  OPENSHIFT_NAMESPACE: ${{ format("{0} {1}" vars.OS_NAMESPACE, vars.OS_ENVIRONMENT)}}
+  OPENSHIFT_NAMESPACE: ${{ format('{0}_{1}' vars.OS_NAMESPACE, vars.OS_ENVIRONMENT)}}
 
 jobs:
 
