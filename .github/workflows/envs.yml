@@ -1,0 +1,15 @@
+name: ENV Variables
+
+on:
+  workflow_dispatch:
+
+env:
+  OPENSHIFT_NAMESPACE: ${{ vars.OS_NAMESPACE + vars.OS_ENVIRONMENT }}
+
+jobs:
+
+  job1:
+
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ env.OPENSHIFT_NAMESPACE }}
