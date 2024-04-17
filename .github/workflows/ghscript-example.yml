@@ -52,11 +52,12 @@ jobs:
         with:
           github-token: ${{ steps.app-token.outputs.token }}
           script: |
+            let owner = "djredman99"
             let page = 1;
             let repoList = [];
             while (true) {
               const repos = await github.rest.repos.listForUser({
-                'djredman99',
+                owner,
               });
               if (repos.data.length === 0){
                 console.log('NO DATA');
