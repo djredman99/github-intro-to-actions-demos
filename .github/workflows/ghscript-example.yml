@@ -55,7 +55,7 @@ jobs:
             let username = 'djredman99'
             let page = 1;
             let repoList = [];
-            while (true) {
+            //while (true) {
               const repos = await github.rest.repos.listForUser({
                 username,
               });
@@ -66,7 +66,7 @@ jobs:
               repoList = repoList.concat(repos.data);
               //console.log(repoList);
               page++;
-            }
+            //}
             for(let repo of repoList) {
               // Access and print the custom property here
               console.log(repo.name, repo.custom_property);
