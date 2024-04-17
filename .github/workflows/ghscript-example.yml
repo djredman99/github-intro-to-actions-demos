@@ -56,7 +56,7 @@ jobs:
             let repoList = [];
             while (true) {
               const repos = await github.rest.repos.listForUser({
-                context.repo.owner,
+                'djredman99',
               });
               if (repos.data.length === 0){
                 console.log('NO DATA');
