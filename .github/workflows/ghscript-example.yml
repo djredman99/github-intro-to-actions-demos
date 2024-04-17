@@ -61,7 +61,7 @@ jobs:
               });
               if (repos.data.length === 0){
                 console.log('NO DATA');
-                break;
+                //break;
               }
               repoList = repoList.concat(repos.data);
               //console.log(repoList);
