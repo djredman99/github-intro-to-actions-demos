@@ -9,6 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # Showing the repo object
       - uses: actions/github-script@v7
         with:
           script: |
@@ -17,4 +18,21 @@ jobs:
               repo: context.repo.repo
             });
             console.log(repo.data);
+
+      # displaying specific data within the repo object
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const repo = await github.rest.repos.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+            console.log(repo.data.permissions);
+
+      # outputing the rest object
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            
+            console.log(github.rest);
             
