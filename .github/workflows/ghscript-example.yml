@@ -65,9 +65,12 @@ jobs:
               }
               repoList = repoList.concat(repos.data);
               //console.log(repoList);
-              console.log(repo.name, repo.custom_property);
               page++;
             //}
+            for(let repo of repoList) {
+            // Access and print the custom property here
+            console.log(repo.name, repo.custom_property);
+            }
 
             
       - name: Push to Step Summary in javascript
