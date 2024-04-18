@@ -65,6 +65,7 @@ jobs:
               }
               repoList = repoList.concat(repos.data);
               //console.log(repoList);
+              console.log(repo.name, repo.custom_property);
               page++;
             //}
 
@@ -76,5 +77,6 @@ jobs:
           script: |
             let username = 'djredman99'
             process.env.GITHUB_STEP_SUMMARY = 'HELOO'
+            console.log(process.env.GITHUB_STEP_SUMMARY)
             
             
