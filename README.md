@@ -1,5 +1,7 @@
 # GitHub: Intro to Actions
 
+[![Demo 7 - Environments](https://github.com/djredman99/github-intro-to-actions-demos/actions/workflows/main.yml/badge.svg)](https://github.com/djredman99/github-intro-to-actions-demos/actions/workflows/main.yml)
+
 ## Overview
 This repository has a series of workflows designed to introduce different features of GitHub Actions.
 
