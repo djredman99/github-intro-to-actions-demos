@@ -1,0 +1,10 @@
+name: Add to ENV
+
+on:
+  workflow_call:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo $CALL_STACK
