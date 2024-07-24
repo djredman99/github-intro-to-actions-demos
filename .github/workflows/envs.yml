@@ -4,7 +4,8 @@ on:
   workflow_dispatch:
 
 env:
-  OPENSHIFT_NAMESPACE: ${{ format('{0}_{1}', vars.OS_NAMESPACE, vars.OS_ENVIRONMENT)}}
+  #OPENSHIFT_NAMESPACE: ${{ format('{0}_{1}', vars.OS_NAMESPACE, vars.OS_ENVIRONMENT)}}
+  CALL_STACK: ""
   # ****** CANNOT DO *******
   # OS_NAMESPACE: abc
   # OS_ENVIRONMEN: 123
@@ -16,4 +17,6 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ env.OPENSHIFT_NAMESPACE }}
+      #- run: echo ${{ env.OPENSHIFT_NAMESPACE }}
+      - run: echo "CALL_STACK=$CALL_STACK,workflow1" >> $GITHUB_ENV
+      - run: echo $CALL_STACK
