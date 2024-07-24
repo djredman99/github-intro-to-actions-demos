@@ -22,4 +22,5 @@ jobs:
       - run: echo $CALL_STACK
 
   call-reusable:
+    needs: job1
     uses: ./.github/workflows/env-reusable.yml
