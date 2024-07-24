@@ -20,3 +20,6 @@ jobs:
       #- run: echo ${{ env.OPENSHIFT_NAMESPACE }}
       - run: echo "CALL_STACK=$CALL_STACK,workflow1" >> $GITHUB_ENV
       - run: echo $CALL_STACK
+
+  call-reusable:
+    uses: ./.github/workflows/env-reusable.yml
