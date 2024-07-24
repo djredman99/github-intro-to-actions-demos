@@ -15,7 +15,5 @@ jobs:
         run: echo "$GITHUB_CONTEXT" 
         
   
-  job2:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "reusable workflow job2"
+  reusable-job2:
+    uses: ./.github/workflows/reusable2.yml
