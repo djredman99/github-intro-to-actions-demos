@@ -16,4 +16,4 @@ jobs:
         
   
   reusable-job2:
-    uses: ./.github/workflows/reusable2.yml
+    uses: ./.github/workflows/reusable2.yaml
