@@ -26,6 +26,7 @@ jobs:
       
   reusable-job:
     uses: ./.github/workflows/reusable.yml
+    needs: caller-job
     # uses: djredman99/github-intro-to-actions-demo/.github/workflows/reusable.yml@${{github.ref}}
     
   #reusable-2:
