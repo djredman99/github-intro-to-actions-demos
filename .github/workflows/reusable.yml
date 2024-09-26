@@ -16,3 +16,4 @@ jobs:
   
   reusable-job2:
     uses: ./.github/workflows/reusable2.yml
+    needs: job1
