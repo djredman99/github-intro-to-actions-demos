@@ -5,5 +5,6 @@
 - Secrets
 - ~Environments~
 - ~Triggers and Inputs~
+- required checks
 
 
