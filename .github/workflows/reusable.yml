@@ -2,6 +2,14 @@ name: My Reusable Workflow
 
 on:
   workflow_call:
+    inputs:
+      some_var:
+        description: Hey
+        type: string
+    secrets: 
+      aws_secret:
+        description: Hey
+        required: true
   
 jobs:
   job1:
@@ -12,6 +20,7 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
         run: echo "$GITHUB_CONTEXT" 
+      - run: aws login --secret ${{ secrets.aws_secret }}
         
   
   reusable-job2:
