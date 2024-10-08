@@ -27,6 +27,9 @@ jobs:
   reusable-job:
     uses: ./.github/workflows/reusable.yml
     needs: caller-job
+    with:
+      some-var: Hello
+    secrets: inherit
     # uses: djredman99/github-intro-to-actions-demo/.github/workflows/reusable.yml@${{github.ref}}
     
   #reusable-2:
