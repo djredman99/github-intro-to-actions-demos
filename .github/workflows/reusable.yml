@@ -6,11 +6,7 @@ on:
       some_var:
         description: Hey
         type: string
-    secrets: 
-      aws_secret:
-        description: Hey
-        required: true
-  
+
 jobs:
   job1:
     runs-on: ubuntu-latest
