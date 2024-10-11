@@ -1,7 +1,7 @@
 name: djr-action
 description: Just a custom action that dumps the github context
 runs:
-  type: "composite"
+  using: "composite"
   steps:
     - name: Greeting
       run: echo "Hey There!!  I am a custom action"
