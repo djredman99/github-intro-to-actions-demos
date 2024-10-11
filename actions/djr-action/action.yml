@@ -8,7 +8,6 @@ runs:
       shell: bash
 
     - name: Dump GitHub Context
-      run: echo "$GITHUB_CONTEXT"
+      run: echo "${{ toJSON(github) }}"
       shell: bash
-      env:
-        GITHUB_CONTEXT: ${{ fromJSON(github) }}
+
