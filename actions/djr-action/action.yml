@@ -1,0 +1,14 @@
+name: djr-action
+description: Just a custom action that dumps the github context
+runs:
+  type: "composite"
+  steps:
+    - name: Greeting
+      run: echo "Hey There!!  I am a custom action"
+      shell: bash
+
+    - name: Dump GitHub Context
+      run: echo "$GITHUB_CONTEXT"
+      shell: bash
+      env:
+        GITHUB_CONTEXT: ${{ fromJSON(github) }}
