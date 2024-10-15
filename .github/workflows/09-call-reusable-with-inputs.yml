@@ -4,6 +4,6 @@ on: [workflow_dispatch]
 
 jobs:
   call-reusable:
-    uses: ./.github/workflows/reusable-with-inputs.yml
+    uses: ./.github/workflows/reuseable-with-inputs.yml
     with:
       Docker_Tag: Awesome-tag-v.123.456.789
