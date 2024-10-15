@@ -8,7 +8,7 @@ jobs:
     outputs:
       matrix: ${{ steps.dynamic-matrix.outputs.matrix }}
     steps:
-      - run: echo "matrix=[resourcegroup]" >> "$GITHUB_OUTPUT"
+      - run: echo "matrix=[ resourcegroup, keyvault, storageaccount ]" >> "$GITHUB_OUTPUT"
         id: dynamic-matrix 
 
   matrix-job:
