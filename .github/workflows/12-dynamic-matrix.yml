@@ -35,9 +35,9 @@ jobs:
       - run: |
           touch matrix.txt
           echo '[' >> matrix.txt
-          echo 'resourcegroup,' >> matrix.txt
-          echo 'keyvault,' >> matrix.txt
-          echo 'vnet' >> matrix.txt
+          echo "'resourcegroup,'" >> matrix.txt
+          echo "'keyvault,'" >> matrix.txt
+          echo "'vnet'" >> matrix.txt
           echo ']' >> matrix.txt
           matrix=$(cat matrix.txt)
           echo $matrix
