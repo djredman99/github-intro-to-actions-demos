@@ -1,0 +1,21 @@
+name: Demo 12 - Dynamic Matrix
+
+on: [workflow_dispatch]
+
+jobs:
+  build-dynamic:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.dynamic-matrix.outputs.matrix }}
+    steps:
+      - run: echo "matrix"="resourcegroup, keyvault, vnet, storageaccount"
+        id: dynamic-matrix 
+
+  matrix-job:
+    runs-on: ubuntu-latest
+    needs: build-dynamic
+    strategy:
+      matrix: 
+        resource: ${{ fromJson(needs.build-dynamic.outputs.matrix) }}
+    steps:
+      - run: echo "${{ matrix.resource }}"
