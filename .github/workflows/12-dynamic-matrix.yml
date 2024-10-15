@@ -33,13 +33,12 @@ jobs:
       matrix: ${{ steps.dynamic-matrix.outputs.matrix }}
     steps:
       - run: |
-          touch matrix.txt
-          echo '[' >> matrix.txt
-          echo "'resourcegroup'," >> matrix.txt
-          echo "'keyvault'," >> matrix.txt
-          echo "'vnet'" >> matrix.txt
-          echo ']' >> matrix.txt
-          matrix=$(cat matrix.txt)
+          matrix="["
+          matrix+="'resourcegroup',"
+          matrix+="'keyvault',"
+          matrix+="'vnet'"
+          matrix+="]"
+          
           echo $matrix
           echo "matrix=$matrix" >> $GITHUB_OUTPUT
         id: dynamic-matrix 
