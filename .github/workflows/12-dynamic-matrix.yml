@@ -16,7 +16,7 @@ jobs:
     needs: build-dynamic
     strategy:
       matrix: 
-        resource: ${{ fromJson(needs.build-dynamic.outputs.matrix) }}
+        resource: ${{ toJson(needs.build-dynamic.outputs.matrix) }}
     steps:
       - run: echo "${{ matrix.resource }}"
 
