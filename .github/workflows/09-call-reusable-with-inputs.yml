@@ -1,0 +1,9 @@
+name: Demo 9 - Call Reusable with Inputs
+
+on: [workflow_dispatch]
+
+jobs:
+  call-reusable:
+    uses: ./.github/workflows/reusable-with-inputs.yml
+    with:
+      Docker_Tag: Awesome-tag-v.123.456.789
