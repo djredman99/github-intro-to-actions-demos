@@ -44,3 +44,17 @@ jobs:
           echo "matrix"="[ 'resourcegroup', 'keyvault', 'storageaccount' ]" >> $GITHUB_OUTPUT
         id: dynamic-matrix 
 
+  matrix-job-2:
+    if: true
+    runs-on: ubuntu-latest
+    needs: build-dynamic-2
+    strategy:
+      matrix: 
+        resource: ${{ fromJSON(needs.build-dynamic-2.outputs.matrix)}}
+    
+    steps:
+      - if: true
+        run: echo ${{ needs.build-dynamic.outputs.matrix }}
+        
+      - if: true
+        run: echo "${{ matrix.resource }}"
