@@ -1,0 +1,18 @@
+name: My reusable with inputs
+
+on:
+  workflow_call:
+    inputs:
+      Docker_Tag:
+        description: The tag to use for the Docker image
+        type: string
+        required: false
+        default: "docker-image-${{ github.runid }}"
+        
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello"
+      - run: echo "I AM BUILDING DOCKER WITH TAG:"
+      - run: echo "${{ inputs.Docker_Tag }}"
