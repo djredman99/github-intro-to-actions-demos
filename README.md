@@ -17,14 +17,13 @@ This repository has a series of workflows designed to introduce different featur
 ## Demos
 1. Basic Workflow
 1. Workflow Inputs
-1. **Note Add:** Using Environment variables, Secrets, and Variable
 1. Jobs and Chaining
 1. Matrix Strategy
-1. Context Variables
+1. Contexts
 1. Custom Action
 1. Environments
 2. Reusable Workflows
-3. **Note Add:** Reusable with inputs
 4. Handing Failures with Conditionals
+5. 3. **Note Add:** Reusable with inputs
 
 
