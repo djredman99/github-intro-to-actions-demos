@@ -21,7 +21,7 @@ This repository has a series of workflows designed to introduce different featur
 1. Jobs and Chaining
 1. Matrix Strategy
 1. Context Variables
-1. ~~Pull Requests~~
+1. Custom Action
 1. Environments
 2. Reusable Workflows
 3. **Note Add:** Reusable with inputs
