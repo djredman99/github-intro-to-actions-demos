@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Demo 10 - Handling Failures
+name: Demo 11 - Handling Failures
 
 # Controls when the workflow will run
 on:
