@@ -8,17 +8,20 @@ jobs:
     outputs:
       matrix: ${{ steps.dynamic-matrix.outputs.matrix }}
     steps:
-      - run: echo "matrix=[ resourcegroup, keyvault, storageaccount ]" >> "$GITHUB_OUTPUT"
+      - run: echo "matrix=[ 'resourcegroup', 'keyvault', 'storageaccount' ]" >> "$GITHUB_OUTPUT"
         id: dynamic-matrix 
 
   matrix-job:
     runs-on: ubuntu-latest
     needs: build-dynamic
+    strategy:
+      matrix: 
+        resource: ${{ fromJSON(needs.build-dynamic.outputs.matrix)}}
     
     steps:
       - if: true
         run: echo ${{ needs.build-dynamic.outputs.matrix }}
         
-      - if: false
+      - if: true
         run: echo "${{ matrix.resource }}"
 
