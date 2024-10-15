@@ -41,7 +41,7 @@ jobs:
           echo ']' >> matrix.txt
           matrix=$(cat matrix.txt)
           echo $matrix
-          echo "matrix"="$($matrix)" >> $GITHUB_OUTPUT
+          echo "matrix"="${{ toJson($matrix) }}" >> $GITHUB_OUTPUT
         id: dynamic-matrix 
 
   matrix-job-2:
