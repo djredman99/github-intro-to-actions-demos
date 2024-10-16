@@ -7,6 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: chmod files
+        run: |
+          chmod +x ./scripts/call-script.sh
+          chmod +x ./scripts/call-script-2.sh
       
       - name: Test ENV in run 
         run: echo ${{ env.MY_ENV }}
@@ -16,7 +21,7 @@ jobs:
       - name: Test ENV in run 2
         run: echo $MY_ENV
         env:
-          MY_ENV: "MY VALUE STEP ONE"
+          MY_ENV: "MY VALUE STEP TWO"
 
       - name: Test ENV in script 1
         run: ./scripts/call-script.sh
