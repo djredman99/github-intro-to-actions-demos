@@ -16,14 +16,17 @@ This repository has a series of workflows designed to introduce different featur
 
 ## Demos
 1. Basic Workflow
-1. Workflow Inputs
-1. Jobs and Chaining
-1. Matrix Strategy
-1. Contexts
-1. Custom Action
-1. Environments
-2. Reusable Workflows
-4. Handing Failures with Conditionals
-5. 3. **Note Add:** Reusable with inputs
+2. Workflow Inputs
+3. Jobs and Chaining
+4. Matrix Strategy
+5. Contexts
+6. Custom Action
+7. Environments
+8. Reusable Workflows
+9. Reusable workflow with Inputs
+10. Job Summaries
+11. Handing Failures with Conditionals
+12. Dynamic Matrix
+
 
 
