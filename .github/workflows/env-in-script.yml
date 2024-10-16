@@ -19,9 +19,9 @@ jobs:
       - name: Test ENV in script 1
         run: ./scripts/call-script.sh
         env:
-          MY_ENV: "MY VALUE STEP ONE"
+          MY_ENV: "MY VALUE IN SCRIPT ONE"
 
       - name: Test ENV in script 2
         run: ./scripts/call-script-two.sh
         env:
-          MY_ENV: "MY VALUE STEP ONE"
+          MY_ENV: "MY VALUE IN SCRIPT TWO"
