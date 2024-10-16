@@ -14,21 +14,25 @@ jobs:
           chmod +x ./scripts/call-script-2.sh
       
       - name: Test ENV in run 
+        if: ${{ always() }}
         run: echo ${{ env.MY_ENV }}
         env:
           MY_ENV: "MY VALUE STEP ONE"
 
       - name: Test ENV in run 2
+        if: ${{ always() }}
         run: echo $MY_ENV
         env:
           MY_ENV: "MY VALUE STEP TWO"
 
       - name: Test ENV in script 1
+        if: ${{ always() }}
         run: ./scripts/call-script.sh
         env:
           MY_ENV: "MY VALUE IN SCRIPT ONE"
 
       - name: Test ENV in script 2
+        if: ${{ always() }}
         run: ./scripts/call-script-two.sh
         env:
           MY_ENV: "MY VALUE IN SCRIPT TWO"
