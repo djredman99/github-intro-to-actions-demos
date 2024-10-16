@@ -11,7 +11,7 @@ jobs:
       - name: chmod files
         run: |
           chmod +x ./scripts/call-script.sh
-          chmod +x ./scripts/call-script-2.sh
+          chmod +x ./scripts/call-script-two.sh
       
       - name: Test ENV in run 
         if: ${{ always() }}
