@@ -6,6 +6,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+      
       - name: Test ENV in run 
         run: echo ${{ env.MY_ENV }}
         env:
