@@ -1,0 +1,1 @@
+echo $MY_ENV
