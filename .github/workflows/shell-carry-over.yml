@@ -5,6 +5,9 @@ on: workflow_dispatch
 jobs:
   job1:
     runs-on: ubuntu-latest
+    env:
+      http_proxy: http://proxy.dog.sbc.local.com
+      https_proxy: http://proxy.dog.sbc.local.com.dan.awesome
     steps:
       - run: |
           export DAN="Hey Dan"
@@ -25,4 +28,7 @@ jobs:
           echo "-=== END SHOWING VALUES ===-"
           echo "-=== Showing Path ===-"
           pwd
+          echo "-=== showing envs ===-"
+          echo $http_proxy
+          echo $https_proxy
 
