@@ -1,0 +1,20 @@
+name: Test Shell Variables Between Run Statements
+
+on: workflow_dispatch
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          export DAN="Hey Dan"
+          echo $DAN
+          
+          name="Dan"
+          echo $name
+
+      - run: |    
+          echo "-=== SHOWING VALUES ===-"
+          echo $DAN
+          echo $name
+          echo "-=== END SHOWING VALUES ===-"
