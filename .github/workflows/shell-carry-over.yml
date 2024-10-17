@@ -15,7 +15,7 @@ jobs:
 
           pwd
           mkdir Dan
-          cd /Dan
+          cd Dan
           pwd
 
       - run: |    
