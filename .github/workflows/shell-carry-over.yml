@@ -13,8 +13,16 @@ jobs:
           name="Dan"
           echo $name
 
+          pwd
+          mkdir Dan
+          cd /Dan
+          pwd
+
       - run: |    
           echo "-=== SHOWING VALUES ===-"
           echo $DAN
           echo $name
           echo "-=== END SHOWING VALUES ===-"
+          echo "-=== Showing Path ===-"
+          pwd
+
