@@ -3,6 +3,9 @@ description: Just a custom action that dumps the github context
 runs:
   using: "composite"
   steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
     - name: Greeting
       run: echo "Hey There!!  I am a custom action"
       shell: bash
