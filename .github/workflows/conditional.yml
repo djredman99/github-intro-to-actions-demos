@@ -37,3 +37,16 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Echo value
         run: echo $BUILD_OPTION
+
+  step-conditions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        id: step1
+        run: exit 0
+
+      - name: Step 2
+        if: ${{ success() || steps.step1.conslussion == 'failure' }}
+        id: step2
+        run: exit 0
+
