@@ -48,10 +48,12 @@ jobs:
           exit 1
 
       - name: Step 2
-        if: ${{ success() || steps.step1.conslussion == 'failed' }}
+        #if: ${{ success() || steps.step1.conslussion == 'failed' }}
+        if: ${{ always() }}
         id: step2
         run: |
           echo "And I am Step 2"
+          echo ${{ steps.step1.conclusion }}
           exit 0
 
       - name: Step 3
