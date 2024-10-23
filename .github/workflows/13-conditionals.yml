@@ -48,14 +48,14 @@ jobs:
           exit 1
 
       - name: Step 2
-        if: ${{ success() || steps.step1.conslussion == 'failure' }}
+        if: ${{ success() || steps.step1.conslussion == 'failed' }}
         id: step2
         run: |
           echo "And I am Step 2"
           exit 0
 
       - name: Step 3
-        if: ${{ success() || steps.step2.conslussion == 'failure' }}
+        if: ${{ success() || steps.step2.conslussion == 'failed' }}
         id: step3
         run: |
           echo "Step 3 here!!!"
