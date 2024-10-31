@@ -18,9 +18,11 @@ jobs:
 
       - name: Restore dependencies
         run: dotnet restore
+        working-directory: ./src/
 
       - name: Build 
         run: dotnet build --configuration Release
+        working-directory: ./src/
 
       - name: Attest build provenance
         uses: actions/attest-build-provenance@v1
