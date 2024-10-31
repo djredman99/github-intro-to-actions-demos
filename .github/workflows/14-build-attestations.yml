@@ -6,13 +6,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "hello"
-
       - name: Checkout repository
         uses: actions/checkout@v2
+      
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+          cache: 'local'
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build 
+        run: dotnet build --configuration Release
 
       - name: Attest build provenance
         uses: actions/attest-build-provenance@v1
         with:
           # Specify the path to the folder you want to attest
-          subject-path: .github/workflows
+          subject-path: ./src/MyClassLibrary/bin/Release/net6.0/MyClassLibrary.dll
+      
+      
