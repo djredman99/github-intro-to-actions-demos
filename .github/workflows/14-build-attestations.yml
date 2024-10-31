@@ -1,4 +1,4 @@
-name: Build Attestations
+name: Demo 14 - Build Attestations
 
 on: workflow_dispatch
 
