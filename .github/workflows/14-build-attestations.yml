@@ -7,3 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "hello"
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Attest build provenance
+        uses: actions/attest-build-provenance@v1
+        with:
+          # Specify the path to the folder you want to attest
+          subject-path: .github/workflows
