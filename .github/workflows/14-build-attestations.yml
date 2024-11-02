@@ -49,6 +49,8 @@ jobs:
       # Lets validate the attestation
       - name: Validate Attestation
         id: validate
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: gh attestation verify staging/MyClassLibrary.dll -R djredman99/githhub-intro-to-actions-demos
 
       - name: Output Attestation
@@ -56,6 +58,6 @@ jobs:
         run: echo "The attestation is VERIFIED" >> GITHUB_STEP_SUMMARY
 
       - name: Output Attestation FAILED
-        if: steps.validate.outcome == 'failure'
+        if: (failure() && steps.validate.outcome == 'failure')
         run: echo "The attestation is NOT VERIFIED" >> GITHUB_STEP_SUMMARY
       
