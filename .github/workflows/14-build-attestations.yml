@@ -75,6 +75,9 @@ jobs:
         with:
           name: attestations
           path: staging/
+         
+      - name: List files in staging directory 
+        run: ls -al staging/
 
       - name: Validate Attestation
         id: validate
