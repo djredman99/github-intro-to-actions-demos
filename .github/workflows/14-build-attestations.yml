@@ -87,8 +87,8 @@ jobs:
 
       - name: Output Attestation
         if: steps.validate.outcome == 'success'
-        run: echo "The attestation is VERIFIED" >> GITHUB_STEP_SUMMARY
+        run: echo "The attestation is VERIFIED" >> $GITHUB_STEP_SUMMARY
 
       - name: Output Attestation FAILED
         if: (failure() && steps.validate.outcome == 'failure')
-        run: echo "The attestation is NOT VERIFIED" >> GITHUB_STEP_SUMMARY
+        run: echo "The attestation is NOT VERIFIED" >> $GITHUB_STEP_SUMMARY
