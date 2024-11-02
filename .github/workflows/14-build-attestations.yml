@@ -83,8 +83,8 @@ jobs:
         id: validate
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        run: gh attestation verify staging/attestations.tar.gz -R djredman99/gh-scripts
-
+        #run: gh attestation verify staging/attestations.tar.gz -R djredman99/gh-scripts
+        run: gh attestation verify staging/attestations.tar.gz -R ${{ github.repository }}
       - name: Output Attestation
         if: steps.validate.outcome == 'success'
         run: echo "The attestation is VERIFIED" >> $GITHUB_STEP_SUMMARY
