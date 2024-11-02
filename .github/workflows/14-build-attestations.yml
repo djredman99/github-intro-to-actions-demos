@@ -6,6 +6,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      dotnet-version: '8.0'
+
     # if you use ANY permissions in yaml, you must include all permissions
     permissions:
       # for checkout
@@ -23,7 +26,7 @@ jobs:
       - name: Setup dotnet
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: ${{ env.dotnet-version }}
 
       - name: Restore dependencies
         run: dotnet restore src/MyClassLibrary/MyClassLibrary.csproj
@@ -35,7 +38,7 @@ jobs:
         run: mkdir -p ./staging
   
       - name: Copy DLL to staging directory
-        run: cp ./src/MyClassLibrary/bin/Release/net8.0/MyClassLibrary.dll ./staging/
+        run: cp ./src/MyClassLibrary/bin/Release/net${{env.dotnet-version}}/MyClassLibrary.dll ./staging/
 
       - name: Attest build provenance
         uses: actions/attest-build-provenance@v1
