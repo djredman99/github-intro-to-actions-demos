@@ -17,12 +17,11 @@ jobs:
 
 
       - name: Restore dependencies
-        run: dotnet restore 
-        working-directory: src/
+        run: dotnet restore src/MyClassLibrary/MyClassLibrary.csproj
+
 
       - name: Build 
-        run: dotnet build --configuration Release
-        working-directory: src/
+        run: dotnet build --configuration Release src/MyClassLibrary/MyClassLibrary.csproj
 
       - name: Attest build provenance
         uses: actions/attest-build-provenance@v1
