@@ -40,19 +40,47 @@ jobs:
       - name: Copy DLL to staging directory
         run: cp ./src/MyClassLibrary/bin/Release/net${{env.dotnet-version}}/MyClassLibrary.dll ./staging/
 
+      - name: Create artifact
+        run: |
+          cd staging
+          tar -czf attestations.tar.gz ./*
+
       - name: Attest build provenance
         uses: actions/attest-build-provenance@v1
         with:
           # Specify the path to the folder you want to attest
-          subject-path: staging/MyClassLibrary.dll
+          subject-path: staging/attestations.tar.gz
 
+      - name: Upload attestations 
+        uses: actions/upload-artifact@v4
+        with:
+          name: attestations
+          path: staging/
 
-            # Lets validate the attestation
+  # Lets validate the attestation
+  validate:
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+
+    steps:
+      - name: Create staging directory
+        run: mkdir -p ./staging
+
+      - name: Download the artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: attestations
+          path: staging/
+
       - name: Validate Attestation
         id: validate
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        run: gh attestation verify staging/MyClassLibrary.dll -R djredman99/githhub-intro-to-actions-demos
+        run: gh attestation verify staging/attestations.tar.gz -R djredman99/githhub-intro-to-actions-demos
 
       - name: Output Attestation
         if: steps.validate.outcome == 'success'
