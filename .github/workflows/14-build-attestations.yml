@@ -83,7 +83,7 @@ jobs:
         id: validate
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        run: gh attestation verify staging/attestations.tar.gz --owner djredman99 --bundle ./djredman99-github-intro-to-actions-demos-attestation-2853082
+        run: gh attestation verify staging/attestations.tar.gz -R djredman99/github-intro-to-actions-demos
 
       - name: Output Attestation
         if: steps.validate.outcome == 'success'
