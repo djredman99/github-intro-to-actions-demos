@@ -46,18 +46,5 @@ jobs:
           # Specify the path to the folder you want to attest
           subject-path: staging/MyClassLibrary.dll
 
-      # Lets validate the attestation
-      - name: Validate Attestation
-        id: validate
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        run: gh attestation verify staging/MyClassLibrary.dll -R djredman99/githhub-intro-to-actions-demos
 
-      - name: Output Attestation
-        if: steps.validate.outcome == 'success'
-        run: echo "The attestation is VERIFIED" >> GITHUB_STEP_SUMMARY
-
-      - name: Output Attestation FAILED
-        if: (failure() && steps.validate.outcome == 'failure')
-        run: echo "The attestation is NOT VERIFIED" >> GITHUB_STEP_SUMMARY
       
