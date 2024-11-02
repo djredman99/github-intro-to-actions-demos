@@ -84,9 +84,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         # FAIL CASE
-        #run: gh attestation verify staging/attestations.tar.gz -R djredman99/gh-scripts
+        run: gh attestation verify staging/attestations.tar.gz -R djredman99/gh-scripts
         # SUCCESS CASE
-        run: gh attestation verify staging/attestations.tar.gz -R ${{ github.repository }}
+        #run: gh attestation verify staging/attestations.tar.gz -R ${{ github.repository }}
         continue-on-error: true
 
       - name: Output Attestation
