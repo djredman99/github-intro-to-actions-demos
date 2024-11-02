@@ -5,6 +5,16 @@ on: workflow_dispatch
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    # if you use ANY permissions in yaml, you must include all permissions
+    permissions:
+      # for checkout
+      contents: read
+      # you must include thess permission to use the action/attest-build-provenance@v1 action
+      id-token: write
+      attestations: write
+
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
