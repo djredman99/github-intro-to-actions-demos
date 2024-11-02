@@ -13,12 +13,10 @@ jobs:
       - name: Setup dotnet
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '6.0.x'
-
+          dotnet-version: '8.0.x'
 
       - name: Restore dependencies
         run: dotnet restore src/MyClassLibrary/MyClassLibrary.csproj
-
 
       - name: Build 
         run: dotnet build --configuration Release src/MyClassLibrary/MyClassLibrary.csproj
@@ -28,5 +26,4 @@ jobs:
         with:
           # Specify the path to the folder you want to attest
           subject-path: ./src/MyClassLibrary/bin/Release/net6.0/MyClassLibrary.dll
-      
       
