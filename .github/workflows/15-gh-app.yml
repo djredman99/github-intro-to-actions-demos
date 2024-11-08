@@ -1,0 +1,28 @@
+name: Demo 15 - GitHub App
+
+on: workflow_dispatch
+
+jobs:
+  use-gh-app:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.PRIVATE_KEY }}
+
+      - uses: actions/checkout@v2
+        with:
+          repository: some-other-repo
+          token: ${{ steps.app-token.outputs.token }}
+
+      
+
+
+
+
