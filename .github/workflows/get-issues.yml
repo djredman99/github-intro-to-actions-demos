@@ -1,0 +1,42 @@
+name: Access Issues with github-script
+
+on:
+  workflow_dispatch:
+
+jobs:
+  get_issues:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        id: list_issues
+        with:
+          script: |
+            console.log(context.repo.owner);
+            console.log(context.repo.repo);
+
+            const ft_team = ['djredman99', 'mickeygousset', 'kenmuse', 'dmckinstry', 'kittychiu', 'joshjohanning', 'tspacoal', 'whsalazar'];
+
+            const opts = {
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            };
+
+            const issues = await github.paginate(
+              github.rest.issues.listForRepo,
+              opts,
+              (response) => response.data.filter(issue => !issue.pull_request)
+            );
+
+            const filteredIssues = issues.map(issue => ({
+              title: issue.title,
+              assignees: issue.assignees ? issue.assignees
+                .map(assignee => assignee.login)
+                .filter(login => ft_team.includes(login)) : [],
+              created_at: issue.created_at,
+              state: issue.state,
+              updated_at: issue.updated_at // This is the closest field to status change date
+            }));
+
+            for (const issue of filteredIssues) {
+              console.log(issue);
+            }
