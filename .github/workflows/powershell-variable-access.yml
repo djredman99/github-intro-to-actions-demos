@@ -9,6 +9,6 @@ jobs:
       - name: Test variable access in powershell
         shell: pwsh
         run: |
-          echo "This is my varialbe:
+          echo "This is my varialbe:"
           echo $env:GH_APP_ID
           echo "Did you see it?"
