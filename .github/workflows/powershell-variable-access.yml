@@ -1,0 +1,14 @@
+name: Test Powershell Accessing Variables
+
+on: workflow_dispatch
+
+jobs:
+  test-powershell:
+    runs-on: windows-latest
+    steps:
+      - name: Test variable access in powershell
+        shell: pwsh
+        run: |
+          echo "This is my varialbe:
+          echo $env:GH_APP_ID
+          echo "Did you see it?"
