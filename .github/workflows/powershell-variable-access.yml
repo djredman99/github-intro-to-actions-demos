@@ -10,5 +10,5 @@ jobs:
         shell: pwsh
         run: |
           echo "This is my varialbe:"
-          echo $env:GH_APP_ID
+          echo ${{ variables.GH_APP_ID }}
           echo "Did you see it?"
