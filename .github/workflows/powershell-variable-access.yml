@@ -10,5 +10,4 @@ jobs:
         shell: pwsh
         run: |
           echo "This is my varialbe:"
-          echo ${{ variables.GH_APP_ID }}
           echo "Did you see it?"
