@@ -10,5 +10,5 @@ jobs:
         shell: pwsh
         run: |
           echo "This is my varialbe:"
-          Write-Output "${{ variables.GH_APP_ID }}"
+          Write-Output "${{ vars.GH_APP_ID }}"
           echo "Did you see it?"
