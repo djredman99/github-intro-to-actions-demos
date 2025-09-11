@@ -22,7 +22,7 @@ jobs:
       - name: Checkout some other repository
         uses: actions/checkout@v2
         with:
-          repository: empty-repo
+          repository: djredman99/empty-repo
           token: ${{ steps.app-token.outputs.token }}
 
       
