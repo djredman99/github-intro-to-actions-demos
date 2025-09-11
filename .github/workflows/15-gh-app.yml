@@ -15,6 +15,7 @@ jobs:
         with:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.PRIVATE_KEY }}
+          owner: djredman99
 
       - uses: actions/checkout@v2
         with:
