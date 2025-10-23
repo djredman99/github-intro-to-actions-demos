@@ -21,6 +21,7 @@ jobs:
       - run: echo "CALL_STACK=$CALL_STACK,workflow1" >> $GITHUB_ENV
       - run: echo $CALL_STACK
 
+# env's will not pass to reusable workflows, nor can they be used as inputs
   call-reusable:
     needs: job1
     uses: ./.github/workflows/env-reusable.yml
